@@ -2,4 +2,4 @@
 cd /var/log
 git add .
 git commit --quiet -m "Backup $(date)"
-git push --quiet origin master
+GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git push --quiet origin master
