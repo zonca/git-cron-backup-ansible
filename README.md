@@ -45,6 +45,8 @@ On your local machine, from the repository root folder, run:
     ansible-playbook site.yml
 
 This will install the deploy key on root, initialize the repo in the remote folder and prepare the remote.
-**It will not push immediately**.
 
-It will install a script in `/etc/cron.hourly`, within one hour, the backup should automatically run.
+It will install a script in `/etc/cron.hourly` so that the backup will run regularly.
+
+Finally it will launch the first backup via `run-parts` so that we can check that it is picking up
+the script correctly.

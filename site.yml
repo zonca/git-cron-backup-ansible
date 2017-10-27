@@ -20,3 +20,5 @@
         chdir: "{{ folder_to_backup }}"
   - name: copy script to cron hourly
     copy: src=./run_git_backup dest=/etc/cron.hourly/ mode=0755
+  - name: trigger the first backup
+    command: run-parts /etc/cron.hourly
