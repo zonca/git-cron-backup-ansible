@@ -11,12 +11,12 @@
   - name: inizialize repository
     command: git init
     args:
-        chdir: {{folder_to_backup}}
-        creates: {{folder_to_backup}}/.git
+        chdir: "{{ folder_to_backup }}"
+        creates: "{{ folder_to_backup }}/.git"
   - name : set remote
-    command: git remote add origin git@github.com:{{github_repository}}
+    command: git remote add origin {{ git_repository }}
     ignore_errors: True
     args:
-        chdir: {{folder_to_backup}}
+        chdir: "{{ folder_to_backup }}"
   - name: copy script to cron hourly
-    copy: src=./run_git_backup dest=/etc/cron.hourly/
+    copy: src=./run_git_backup dest=/etc/cron.hourly/ mode=0755
