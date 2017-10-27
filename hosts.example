@@ -1,2 +1,2 @@
 [servers]
-SERVERURL private_deploy_key=./id_rsa github_repository=GITHUBUSERNAME/logbackup ansible_user=SSHUSENAME folder_to_backup=/var/log
+SERVERURL private_deploy_key=./id_rsa git_repository=git@github.com:GITHUBUSERNAME/logbackup ansible_user=SSHUSERNAME folder_to_backup=/var/log
